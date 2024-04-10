@@ -22,7 +22,7 @@
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             name</th>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Degination</th>
+                                            Designation</th>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                             Description</th>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -46,7 +46,7 @@
                                                 <td>
                                                     <div class="d-flex px-2 py-1" >
                                                         <div class="d-flex flex-column justify-content-center">
-                                                            <h6 class="mb-0 text-sm"><b style="font-weight:900; font-size:17px">{{ $volunteer->degination }}</b></h6>
+                                                            <h6 class="mb-0 text-sm"><b style="font-weight:900; font-size:17px">{{ $volunteer->designation }}</b></h6>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -70,10 +70,10 @@
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">{{ $volunteer->title }}</h5>
+                                                            <h5 class="modal-title" id="exampleModalLabel">{{ $volunteer->name }}</h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times fa-lg" style="color: red;"></i></button>
                                                         </div>
-                                                        <h6 class= "px-2 mb-0 text-sm text-justify">{!! $volunteer->details !!}</h6>
+                                                        <h6 class= "px-2 mb-0 text-sm text-justify">{!! $volunteer->description !!}</h6>
                                                         </div>
                                                     </div>
                                                 </div>

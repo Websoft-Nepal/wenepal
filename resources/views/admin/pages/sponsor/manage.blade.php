@@ -24,6 +24,8 @@
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                             Description</th>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Donation</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Action</th>
                                         <th class="text-secondary opacity-7"></th>
                                     </tr>
@@ -44,7 +46,14 @@
                                                 <td>
                                                     <div class="d-flex px-2 py-1 wrap-text">
                                                         <div class="d-flex flex-column justify-content-center">
-                                                            <h6 class="mb-0 text-sm truncate-details">{{ $sponsor->cost }}</h6>
+                                                            <h6 class="mb-0 text-sm truncate-details">{!! $sponsor->description !!}</h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex px-2 py-1" >
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm"><b style="font-weight:900; font-size:17px">{{ $sponsor->donation }}</b></h6>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -61,10 +70,10 @@
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">{{ $sponsor->title }}</h5>
+                                                            <h5 class="modal-title" id="exampleModalLabel">{{ $sponsor->name }}</h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times fa-lg" style="color: red;"></i></button>
                                                         </div>
-                                                        <h6 class= "px-2 mb-0 text-sm text-justify">{!! $sponsor->details !!}</h6>
+                                                        <h6 class= "px-2 mb-0 text-sm text-justify">{!! $sponsor->description !!}</h6>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -2,6 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{ asset("site/images/logo.png") }}" type="image/png">
     <title>Charity</title>
     <link rel="stylesheet" href="{{ asset("site/css/bootstrap.min.css") }}">
     <link rel="stylesheet" href="{{ asset("site/css/all.min.css") }}">

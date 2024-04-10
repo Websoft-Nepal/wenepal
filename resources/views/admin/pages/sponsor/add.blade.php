@@ -27,6 +27,15 @@
                                                 @enderror
                                             </div>
                                         </div>
+                                        <div class="col-md-6 english">
+                                            <div class="form-group">
+                                                <label class="form-control-label">Donation</label>
+                                                <input type="text" name="donation" class="form-control" value="{{ old('donation') }}">
+                                                @error('donation')
+                                                <div class="text-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
                                         <div class="col-md-6">
                                             <div class="form-group" style="border: 1px solid #ccc; padding: 20px;">
                                                 <label class="form-control-label">Photo</label>

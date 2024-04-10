@@ -8,12 +8,21 @@ use App\Http\Controllers\Site\AboutController;
 use App\Http\Controllers\Site\ServiceController;
 use App\Http\Controllers\Site\BlogController;
 use App\Http\Controllers\Site\ContactController;
+use App\Http\Controllers\Site\SponsorController;
+use App\Http\Controllers\Site\VolunteerController;
+use App\Http\Controllers\Site\TermsController;
+use App\Http\Controllers\Site\PolicyController;
 
 Route::get('/', [IndexController::class, 'displayIndex'])->name('displayIndex');
 Route::get('/about', [AboutController::class, 'displayAbout'])->name('displayAbout');
 Route::get('/service', [ServiceController::class, 'displayService'])->name('displayService');
 Route::get('/blog', [BlogController::class, 'displayBlog'])->name('displayBlog');
 Route::get('/contact', [ContactController::class, 'displayContact'])->name('displayContact');
+Route::post('/contact', [ContactController::class, 'storeContact'])->name('storeContact');
+Route::get('/sponsor', [SponsorController::class, 'displaySponsor'])->name('displaySponsor');
+Route::get('/volunteer', [VolunteerController::class, 'displayVolunteer'])->name('displayVolunteer');
+Route::get('/terms/condition', [TermsController::class, 'displayTerms'])->name('displayTerms');
+Route::get('/privacy/policy', [PolicyController::class, 'displayPolicy'])->name('displayPolicy');
 // site routes end
 
 // admin routes

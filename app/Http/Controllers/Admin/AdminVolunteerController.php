@@ -43,7 +43,7 @@ class AdminVolunteerController extends Controller
         $volunteer->slug = $slug;
         $volunteer->name = $request->name;
         $volunteer->designation = $request->designation;
-        $volunteer->description = $request->designation;
+        $volunteer->description = $request->description;
         if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
             $time = md5(time()) . '.' . $photo->getClientOriginalExtension();
@@ -74,7 +74,7 @@ class AdminVolunteerController extends Controller
         $volunteer = Volunteer::where('slug', $slug)->first();
         $volunteer->name = $request->name;
         $volunteer->designation = $request->designation;
-        $volunteer->description = $request->designation;
+        $volunteer->description = $request->description;
         if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
             unlink('site/uploads/volunteer/' . $volunteer->photo);

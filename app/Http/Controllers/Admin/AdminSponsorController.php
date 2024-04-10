@@ -26,6 +26,7 @@ class AdminSponsorController extends Controller
     {
         $request->validate([
             'name'=>'required',
+            'donation'=>'required',
             'photo'=>'required',
             'description'=>'required',
         ]);
@@ -39,6 +40,7 @@ class AdminSponsorController extends Controller
         }
         $sponsor->slug = $slug;
         $sponsor->name = $request->name;
+        $sponsor->donation = $request->donation;
         $sponsor->description = $request->description;
         if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
@@ -63,10 +65,12 @@ class AdminSponsorController extends Controller
     {
         $request->validate([
             'name'=>'required',
+            'donation'=>'required',
             'description'=>'required',
         ]);
         $sponsor=Sponsor::where('slug',$slug)->first();
         $sponsor->name=$request->name;
+        $sponsor->donation=$request->donation;
         $sponsor->description=$request->description;
         if($request->hasFile('photo')){
             $photo=$request->file('photo');
