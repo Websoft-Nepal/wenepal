@@ -9,7 +9,7 @@
         </a>
     </div>
     <hr class="horizontal dark mt-0">
-    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+    <div class="" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link {{ Route::currentRouteName() == 'home' ? 'active' : '' }}"
@@ -69,7 +69,7 @@
                     href="{{ route('manageBlog') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-single-copy-04 text-success text-sm opacity-10"></i>
+                        <i class="ni ni-archive-2 text-success text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">Blog</span>
                 </a>
@@ -92,6 +92,36 @@
                         <i class="fa fa-user-plus text-success text-sm opacity-10" aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">Volunteer</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ str_contains(request()->url(), 'contact') == true ? 'active' : '' }}"
+                    href="{{ route('manageContact') }}">
+                    <div
+                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-mobile-button text-success text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Contact</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ str_contains(request()->url(), 'term') == true ? 'active' : '' }}"
+                    href="{{ route('manageTerms') }}">
+                    <div
+                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-single-copy-04 text-success text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Terms & Condition</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ str_contains(request()->url(), 'policy') == true ? 'active' : '' }}"
+                    href="{{ route('managePolicy') }}">
+                    <div
+                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-newspaper-o text-success  text-sm opacity-10" aria-hidden="true"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Privacy Policy</span>
                 </a>
             </li>
         </ul>

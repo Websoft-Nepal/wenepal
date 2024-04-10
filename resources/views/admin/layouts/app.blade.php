@@ -65,6 +65,21 @@
         });
     </script>
     <script>
+        const photoInput = document.getElementById('photoInput');
+        const photoPreview = document.getElementById('photoPreview');
+
+        photoInput.addEventListener('change', () => {
+            const file = photoInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    photoPreview.src = reader.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+    <script>
         var win = navigator.platform.indexOf('Win') > -1;
         if (win && document.querySelector('#sidenav-scrollbar')) {
             var options = {

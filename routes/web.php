@@ -30,6 +30,8 @@ use App\Http\Controllers\Admin\AdminSponsorController;
 use App\Http\Controllers\Admin\AdminVolunteerController;
 use App\Http\Controllers\Admin\AdminContactController;
 use App\Http\Controllers\Admin\AdminCauseController;
+use App\Http\Controllers\Admin\AdminTermsController;
+use App\Http\Controllers\Admin\AdminPolicyController;
 
 
 Route::get('/login', [LoginController::class, 'show'])->middleware('guest')->name('login');
@@ -95,7 +97,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/contact/manage', [AdminContactController::class, 'manageContact'])->name('manageContact');
     Route::post('/contact/manage/update', [AdminContactController::class, 'updateContact'])->name('updateContact');
     //contact end
-
+    //terms And Condition
+    Route::get('/terms/manage', [AdminTermsController::class, 'manageTerms'])->name('manageTerms');
+    Route::post('/terms/manage/update', [AdminTermsController::class, 'updateTerms'])->name('updateTerms');
+    //terms And Condition end
+    //privacy policy
+    Route::get('/policy/manage', [AdminPolicyController::class, 'managePolicy'])->name('managePolicy');
+    Route::post('/policy/manage/update', [AdminPolicyController::class, 'updatePolicy'])->name('updatePolicy');
+    //privacy policy end
 
 	//user profile
 	Route::get('/profile', [UserProfileController::class, 'show'])->name('profile');

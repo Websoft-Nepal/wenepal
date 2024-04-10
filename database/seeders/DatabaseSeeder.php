@@ -26,6 +26,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AboutSeeder::class,
             ContactSeeder::class,
+            TermSeeder::class,
+            PolicySeeder::class,
             // ServiceSeeder::class,
             // BlogSeeder::class,
         ]);
