@@ -94,7 +94,9 @@ class AdminBlogController extends Controller
     public function deleteBlog($slug)
     {
         $blog = Blog::where('slug', $slug)->first();
-        unlink('site/uploads/blog/' . $blog->photo);
+        if (file_exists('site/uploads/blog/' . $blog->photo)) {
+            unlink('site/uploads/blog/' . $blog->photo);
+        }
         $blog->delete();
         alert::success('Blog Deleted Successfully');
         return redirect()->route('manageBlog');

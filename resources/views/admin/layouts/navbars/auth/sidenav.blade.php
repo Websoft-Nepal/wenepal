@@ -95,6 +95,16 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link {{ str_contains(request()->url(), 'gallery') == true ? 'active' : '' }}"
+                    href="{{ route('manageGallery') }}">
+                    <div
+                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-picture-o text-success text-sm opacity-10" aria-hidden="true"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Gallery</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link {{ str_contains(request()->url(), 'contact') == true ? 'active' : '' }}"
                     href="{{ route('manageContact') }}">
                     <div

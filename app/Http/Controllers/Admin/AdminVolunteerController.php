@@ -90,7 +90,9 @@ class AdminVolunteerController extends Controller
     public function deleteVolunteer($slug)
     {
         $volunteer = Volunteer::where('slug', $slug)->first();
-        unlink('site/uploads/volunteer/' . $volunteer->photo);
+        if (file_exists('site/uploads/volunteer/' . $volunteer->photo)) {
+            unlink('site/uploads/volunteer/' . $volunteer->photo);
+        }
         $volunteer->delete();
         alert::success('Success', 'Volunteer Deleted Successfully');
         return redirect()->route('manageVolunteer');

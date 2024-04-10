@@ -93,7 +93,9 @@ class AdminServiceController extends Controller
     public function deleteService($slug)
     {
         $service = Service::where('slug', $slug)->first();
-        unlink('site/uploads/service/' . $service->photo);
+        if (file_exists('site/uploads/service/' . $service->photo)) {
+            unlink('site/uploads/service/' . $service->photo);
+        }
         Service::where('slug', $slug)->delete();
         alert::success('Service Deleted Successfully');
         return redirect()->route('manageService');

@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\UserProfileController;
 use App\Http\Controllers\Admin\AdminAboutController;
 use App\Http\Controllers\Admin\AdminServiceController;
 use App\Http\Controllers\Admin\AdminBlogController;
+use App\Http\Controllers\Admin\AdminGalleryController;
 use App\Http\Controllers\Admin\AdminTeamController;
 use App\Http\Controllers\Admin\AdminSponsorController;
 use App\Http\Controllers\Admin\AdminVolunteerController;
@@ -69,6 +70,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/blog/update/{slug}', [AdminBlogController::class, 'updateBlog'])->name('updateBlog');
     Route::delete('/blog/delete/{slug}', [AdminBlogController::class, 'deleteBlog'])->name('deleteBlog');
 	//blog end
+    //gallery
+    Route::get('/gallery/manage', [AdminGalleryController::class, 'manageGallery'])->name('manageGallery');
+    Route::get('/gallery/add', [AdminGalleryController::class, 'addGallery'])->name('addGallery');
+    Route::post('/gallery/store', [AdminGalleryController::class, 'storeGallery'])->name('storeGallery');
+    Route::get('/gallery/edit/{slug}', [AdminGalleryController::class, 'editGallery'])->name('editGallery');
+    Route::post('/gallery/update/{slug}', [AdminGalleryController::class, 'updateGallery'])->name('updateGallery');
+    Route::delete('/gallery/delete/{slug}', [AdminGalleryController::class, 'deleteGallery'])->name('deleteGallery');
+    //gallery end
     //team
     Route::get('/team/manage', [AdminTeamController::class, 'manageTeam'])->name('manageTeam');
     Route::get('/team/add', [AdminTeamController::class, 'addTeam'])->name('addTeam');

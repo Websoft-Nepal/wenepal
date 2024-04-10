@@ -93,7 +93,9 @@ class AdminCauseController extends Controller
     public function deleteCause($slug)
     {
         $cause = Cause::where('slug', $slug)->first();
-        unlink('site/uploads/cause/' . $cause->photo);
+        if (file_exists('site/uploads/cause/' . $cause->photo)) {
+            unlink('site/uploads/cause/' . $cause->photo);
+        }
         Cause::where('slug', $slug)->delete();
         alert::success('Cause Deleted Successfully');
         return redirect()->route('manageCause');

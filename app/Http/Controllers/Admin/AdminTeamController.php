@@ -118,7 +118,9 @@ class AdminTeamController extends Controller
     public function deleteTeam($slug)
     {
         $team = Team::where('slug', $slug)->first();
-        unlink('site/uploads/team/' . $team->photo);
+        if (file_exists('site/uploads/team/' . $team->photo)) {
+            unlink('site/uploads/team/' . $team->photo);
+        }
         $team->delete();
         alert::success('Team Member Deleted Successfully');
         return redirect()->route('manageTeam');

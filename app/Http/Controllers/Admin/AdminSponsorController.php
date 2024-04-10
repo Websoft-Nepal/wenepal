@@ -83,7 +83,9 @@ class AdminSponsorController extends Controller
     public function deleteSponsor($slug)
     {
         $sponsor=Sponsor::where('slug',$slug)->first();
-        unlink('site/uploads/sponsor/'.$sponsor->photo);
+        if (file_exists('site/uploads/sponsor/' . $sponsor->photo)) {
+            unlink('site/uploads/sponsor/' . $sponsor->photo);
+        }
         $sponsor->delete();
         alert::success('Sponsor Deleted Successfully');
         return redirect()->route('manageSponsor');
