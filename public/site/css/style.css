@@ -279,7 +279,6 @@ header .nav-items .menu-items .menu ul li a:hover {
     height: 37.5rem;
     overflow: hidden;
     transition: all ease-in-out 0.5s;
-    background-image: url(../images/slider/1.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -388,7 +387,7 @@ header .nav-items .menu-items .menu ul li a:hover {
 }
 
 .bg-02 {
-    padding: 3.125rem 0;
+    padding: 2.56rem 0 0 0;
     position: relative;
     overflow: hidden;
 }
@@ -411,6 +410,12 @@ header .nav-items .menu-items .menu ul li a:hover {
     object-fit: cover;
     border-radius: 5px;
 }
+.causes-detail-img {
+    width: 80%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+}
 
 .bg-02 .wrapper figure {
     margin: 0;
@@ -422,11 +427,12 @@ header .nav-items .menu-items .menu ul li a:hover {
     position: relative;
     display: inline-block;
     width: 100%;
+    min-height: 204px !important;
 }
 
 .bg-02 .wrapper .bs h3 {
-    font-size: 1.25rem;
-    color: #222222;
+    font-size: 19px !important;
+    color:#fd580b !important;
     font-weight: 600;
 }
 
@@ -518,9 +524,9 @@ header .nav-items .menu-items .menu ul li a:hover {
         width: 100%;
         max-width: 100%;
         flex: 1 1 100%;
-        -webkit-flex-direction: 1 1 100%;
+        /* -webkit-flex-direction: 1 1 100%;
         -moz-flex-direction: 1 1 100%;
-        -ms-flex-direction: 1 1 100%;
+        -ms-flex-direction: 1 1 100%; */
     }
 }
 
@@ -529,9 +535,9 @@ header .nav-items .menu-items .menu ul li a:hover {
         width: 50%;
         max-width: 50%;
         flex: 1 1 50%;
-        -webkit-flex-direction: 1 1 50%;
+        /* -webkit-flex-direction: 1 1 50%;
         -moz-flex-direction: 1 1 50%;
-        -ms-flex-direction: 1 1 50%;
+        -ms-flex-direction: 1 1 50%; */
     }
 }
 

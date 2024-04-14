@@ -2,6 +2,7 @@
 
 
 // site routes
+use App\Models\Gallary;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Site\IndexController;
 use App\Http\Controllers\Site\AboutController;
@@ -12,17 +13,24 @@ use App\Http\Controllers\Site\SponsorController;
 use App\Http\Controllers\Site\VolunteerController;
 use App\Http\Controllers\Site\TermsController;
 use App\Http\Controllers\Site\PolicyController;
+use App\Http\Controllers\Site\GallaryController;
+use App\Http\Controllers\MailController;
 
 Route::get('/', [IndexController::class, 'displayIndex'])->name('displayIndex');
 Route::get('/about', [AboutController::class, 'displayAbout'])->name('displayAbout');
 Route::get('/service', [ServiceController::class, 'displayService'])->name('displayService');
+Route::get('/service/detail/{slug}', [ServiceController::class, 'displayServiceDetails'])->name('displayServiceDetails');
+Route::get('/cause/detail/{slug}', [ServiceController::class, 'displayCauseDetails'])->name('displayCauseDetails');
 Route::get('/blog', [BlogController::class, 'displayBlog'])->name('displayBlog');
+Route::get('/blog/detail/{slug}', [BlogController::class, 'displayBlogDetails'])->name('displayBlogDetails');
 Route::get('/contact', [ContactController::class, 'displayContact'])->name('displayContact');
 Route::post('/contact', [ContactController::class, 'storeContact'])->name('storeContact');
 Route::get('/sponsor', [SponsorController::class, 'displaySponsor'])->name('displaySponsor');
 Route::get('/volunteer', [VolunteerController::class, 'displayVolunteer'])->name('displayVolunteer');
 Route::get('/terms/condition', [TermsController::class, 'displayTerms'])->name('displayTerms');
 Route::get('/privacy/policy', [PolicyController::class, 'displayPolicy'])->name('displayPolicy');
+Route::get('/gallery', [GallaryController::class, 'displayGallery'])->name('displayGallery');
+Route::post('/send/mail', [MailController::class, 'send'])->name('sendMail');
 // site routes end
 
 // admin routes
@@ -46,13 +54,12 @@ use App\Http\Controllers\Admin\AdminPolicyController;
 
 Route::get('/login', [LoginController::class, 'show'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest')->name('login.perform');
-Route::get('/reset-password', [ResetPassword::class, 'show'])->middleware('guest')->name('reset-password');
-Route::post('/reset-password', [ResetPassword::class, 'send'])->middleware('guest')->name('reset.perform');
-Route::get('/change-password', [ChangePassword::class, 'show'])->middleware('guest')->name('change-password');
-Route::post('/change-password', [ChangePassword::class, 'update'])->middleware('guest')->name('change.perform');
-Route::get('/dashboard', [HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/reset-password', [ResetPassword::class, 'show'])->name('reset-password')->middleware('guest');
+Route::post('/reset-password', [ResetPassword::class, 'send'])->name('reset.perform')->middleware('guest');
 Route::group(['middleware' => 'auth'], function () {
-	// about
+    Route::get('/change-password', [ChangePassword::class, 'show'])->name('change-password');
+    Route::post('/change-password', [ChangePassword::class, 'update'])->name('change.perform');
+    // about
 	Route::get('/about/manage', [AdminAboutController::class, 'manageAbout'])->name('manageAbout');
 	Route::post('/about/manage/update', [AdminAboutController::class, 'updateAbout'])->name('updateAbout');
 	//about end
@@ -86,6 +93,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/gallery/edit/{slug}', [AdminGalleryController::class, 'editGallery'])->name('editGallery');
     Route::post('/gallery/update/{slug}', [AdminGalleryController::class, 'updateGallery'])->name('updateGallery');
     Route::delete('/gallery/delete/{slug}', [AdminGalleryController::class, 'deleteGallery'])->name('deleteGallery');
+    Route::post('/gallery/photo/delete/{id}', [AdminGalleryController::class, 'deletePhoto'])->name('deletePhoto');
     //gallery end
     //team
     Route::get('/team/manage', [AdminTeamController::class, 'manageTeam'])->name('manageTeam');

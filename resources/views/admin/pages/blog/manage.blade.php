@@ -35,7 +35,7 @@
                                         @foreach($blogs as $blog)
                                         <tr>
                                                 <td style="">
-                                                    <a href="{{ asset('site/Uploads/blog/'.$blog->photo) }}"><img src="{{ asset('site/Uploads/blog/'.$blog->photo) }}" style="width: 60px; height: 65px; object-fit: cover;"></a>
+                                                    <a href="{{ asset('site/uploads/blog/'.$blog->photo) }}"><img src="{{ asset('site/uploads/blog/'.$blog->photo) }}" style="width: 60px; height: 65px; object-fit: cover;"></a>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex px-2 py-1" >

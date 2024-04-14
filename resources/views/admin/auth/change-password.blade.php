@@ -21,15 +21,15 @@
                                             @error('email') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
                                         </div>
                                         <div class="flex flex-col mb-3">
-                                            <input type="password" name="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password" >
+                                            <input type="password" name="password" class="form-control form-control-lg" placeholder="new Password" aria-label="Password" >
                                             @error('password') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
                                         </div>
                                         <div class="flex flex-col mb-3">
-                                            <input type="password" name="confirm-password" class="form-control form-control-lg" placeholder="Password" aria-label="Password"  >
+                                            <input type="password" name="confirm-password" class="form-control form-control-lg" placeholder="confirm Password" aria-label="Password"  >
                                             @error('confirm-password') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Send Reset Link</button>
+                                            <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Change Password</button>
                                         </div>
                                     </form>
                                 </div>

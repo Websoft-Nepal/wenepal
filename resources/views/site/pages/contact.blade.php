@@ -27,8 +27,8 @@
                  <div class="main-card-contact d-flex">
                      <div class="sup-card-contact">
                          <div class="sup-content">
-                             <div class="head-content">
-                                 <h2>Message</h2>
+                             <div class="head-content mb-3">
+                                 <h2>Message</h2><br>
                                  {!! $contact->message !!}
                              </div>
 
@@ -46,7 +46,8 @@
 
                      <div class="sup-card-contact-0a">
                          <div class="contact-a1">
-                             <form>
+                             <form method="POST" action="{{ route('sendMail') }}" enctype="multipart/form-data">
+                                @csrf
                                  <div class="dived d-flex">
                                      <div class="form-group">
                                          <div class="form-sup">
@@ -55,12 +56,18 @@
                                                      placeholder="Enter Your Name">
                                                  <i class="fal fa-user-tie"></i>
                                              </div>
+                                             @error('name')
+                                                 <span class="text-danger">{{ $message }}</span>
+                                             @enderror
 
                                              <div class="cal-01">
                                                  <input type="phone" name="phone" id="" class="form-control"
                                                      placeholder="Phone Number">
                                                  <i class="fal fa-phone"></i>
                                              </div>
+                                                @error('phone')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                          </div>
                                      </div>
 
@@ -71,19 +78,32 @@
                                                      placeholder="Enter Your Email">
                                                  <i class="fal fa-at"></i>
                                              </div>
+                                                @error('email')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                              <div class="cal-01">
                                                  <input type="text" name="subject" id="" class="form-control"
                                                      placeholder="Enter Your Subject">
                                                  <i class="fal fa-envelope-open-text"></i>
                                              </div>
+                                                @error('subject')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                          </div>
                                      </div>
 
                                      <div class="ca-ool">
-                                         <textarea name="text" cols="80" rows="6" class="form-control"
+                                         <textarea name="message" cols="80" rows="6" class="form-control"
                                              placeholder="Message"></textarea>
                                      </div>
-                                 </div>
+                                        @error('message')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="d-flex justify-content-center align-item-center mt-5">
+                                        <button type="submit" class="btn btn-primary" style="background: #fd580b; border:#fd580b">Send Message</button>
+                                    </div>
+
                              </form>
                          </div>
                      </div>

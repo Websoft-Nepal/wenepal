@@ -17,4 +17,22 @@ class ServiceController extends Controller
         ];
         return view('site.pages.service',$data);
     }
+
+    public function displayServiceDetails($slug)
+    {
+        $data=[
+            'service'=>Service::where('slug',$slug)->first(),
+            'services'=>Service::all(),
+        ];
+        return view('site.pages.serviceDetail',$data);
+    }
+
+    public function displayCauseDetails($slug)
+    {
+        $data=[
+            'cause'=>Cause::where('slug',$slug)->first(),
+            'causes'=>Cause::all(),
+        ];
+        return view('site.pages.causeDetail',$data);
+    }
 }

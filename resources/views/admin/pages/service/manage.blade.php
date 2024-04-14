@@ -35,7 +35,7 @@
                                         @foreach($services as $service)
                                         <tr>
                                                 <td style="">
-                                                    <a href="{{ asset('site/Uploads/service/'.$service->photo) }}"><img src="{{ asset('site/Uploads/service/'.$service->photo) }}" style="width: 60px; height: 65px; object-fit: cover;"></a>
+                                                    <a href="{{ asset('site/uploads/service/'.$service->photo) }}"><img src="{{ asset('site/uploads/service/'.$service->photo) }}" style="width: 60px; height: 65px; object-fit: cover;"></a>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex px-2 py-1" >

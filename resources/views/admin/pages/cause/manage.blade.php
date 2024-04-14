@@ -35,12 +35,12 @@
                                         @foreach($causes as $cause)
                                         <tr>
                                                 <td style="">
-                                                    <a href="{{ asset('site/Uploads/cause/'.$cause->photo) }}"><img src="{{ asset('site/Uploads/cause/'.$cause->photo) }}" style="width: 60px; height: 65px; object-fit: cover;"></a>
+                                                    <a href="{{ asset('site/uploads/cause/'.$cause->photo) }}"><img src="{{ asset('site/uploads/cause/'.$cause->photo) }}" style="width: 60px; height: 65px; object-fit: cover;"></a>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex px-2 py-1" >
                                                         <div class="d-flex flex-column justify-content-center">
-                                                            <h6 class="mb-0 text-sm"><b style="font-weight:900; font-size:17px">{{ $cause->title }}</b></h6>
+                                                            <h6 class="mb-0 text-sm truncate-title"><b style="font-weight:900; font-size:17px">{{ $cause->title }}</b></h6>
                                                         </div>
                                                     </div>
                                                 </td>

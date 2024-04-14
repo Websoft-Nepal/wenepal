@@ -34,7 +34,7 @@
                                         @foreach($volunteers as $volunteer)
                                         <tr>
                                                 <td style="">
-                                                    <a href="{{ asset('site/Uploads/volunteer/'.$volunteer->photo) }}"><img src="{{ asset('site/Uploads/volunteer/'.$volunteer->photo) }}" style="width: 60px; height: 60px; object-fit: cover;"></a>
+                                                    <a href="{{ asset('site/uploads/volunteer/'.$volunteer->photo) }}"><img src="{{ asset('site/uploads/volunteer/'.$volunteer->photo) }}" style="width: 60px; height: 60px; object-fit: cover;"></a>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex px-2 py-1" >

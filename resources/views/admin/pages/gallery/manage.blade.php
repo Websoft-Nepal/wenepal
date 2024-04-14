@@ -23,6 +23,9 @@
                                             Photo</th>
                                         <th
                                             class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Title</th>
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Action</th>
                                         <th class="text-secondary opacity-7"></th>
                                     </tr>
@@ -31,7 +34,14 @@
                                         @foreach($galleries as $gallery)
                                         <tr>
                                                 <td style="">
-                                                    <a href="{{ asset('site/Uploads/gallery/'.$gallery->photo) }}"><img src="{{ asset('site/Uploads/gallery/'.$gallery->photo) }}" style="width: 60px; height: 65px; object-fit: cover;"></a>
+                                                    <a href="{{ asset('site/uploads/gallary/'.$gallery->photos->first()->photo) }}" target="_blank"><img src="{{ asset('site/uploads/gallary/'.$gallery->photos->first()->photo) }}" style="width: 60px; height: 65px; object-fit: cover;"></a>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex px-2 py-1" >
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 class="mb-0 text-sm truncate-title"><b style="font-weight:900; font-size:17px">{{ $gallery->title }}</b></h6>
+                                                        </div>
+                                                    </div>
                                                 </td>
                                                 <td class="align-middle">
                                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ $gallery->id }}"><i class="far fa-eye"></i></button>
@@ -49,7 +59,15 @@
                                                                 <h5 class="modal-title" id="exampleModalLabel">{{ $gallery->title }}</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times fa-lg" style="color: red;"></i></button>
                                                             </div>
-                                                            
+                                                                @foreach ($gallery->photos as $item)
+                                                                    <div class="d-flex px-2 py-1">
+                                                                        <div class="d-flex flex-column justify-content-center">
+                                                                            <h6 class="mb-0 text-sm">
+                                                                                <a href="{{ asset('site/uploads/gallary/'.$item->photo) }}" target="_blank"><img src="{{ asset('site/uploads/gallary/'.$item->photo) }}" style="width: 480px; height: 250px; object-fit: cover;"></a>
+                                                                            </h6>
+                                                                        </div>
+                                                                    </div>
+                                                                @endforeach
                                                             </div>
                                                         </div>
                                                     </div>

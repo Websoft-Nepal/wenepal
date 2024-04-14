@@ -15,4 +15,13 @@ class BlogController extends Controller
         ];
         return view('site.pages.blog',$data);
     }
+
+    public function displayBlogDetails($slug)
+    {
+        $data=[
+            'blog'=>Blog::where('slug',$slug)->first(),
+            'blogs'=>Blog::all(),
+        ];
+        return view('site.pages.blogDetail',$data);
+    }
 }

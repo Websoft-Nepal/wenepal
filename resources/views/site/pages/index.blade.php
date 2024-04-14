@@ -5,21 +5,21 @@
           <!-- ======================Banner started====================== -->
 
 
-          <section class="banner">
+          <section class="banner" style="background-image: url({{ asset("img/1.jpeg") }});">
               <div class="container">
                   <div class="row">
                       <div class="col-12">
                           <div class="wrapper">
-                              <h1>YOU CAN HELP WITH THE POOR CHILDREN</h1>
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur adipisci quasi,
+                              {{-- <h1>YOU CAN HELP WITH THE POOR CHILDREN</h1> --}}
+                              {{-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur adipisci quasi,
                                   blanditiis, quidem
                                   distinctio suscipit sunt ducimus illo veritatis corporis quas! Ipsa obcaecati beatae, aut
                                   saepe aliquam
-                                  corrupti fugit. Cupiditate.</p>
-                              <ol>
-                                  <li><a href="#">Join With Us</a></li>
-                                  <li><a href="#">Donate Now</a></li>
-                              </ol>
+                                  corrupti fugit. Cupiditate.</p> --}}
+                              {{-- <ol>
+                                  <li><a href="{{ route("displayVolunteer") }}">Join With Us</a></li>
+                                  <li><a href="{{ route("displaySponsor") }}">Donate Now</a></li>
+                              </ol> --}}
                           </div>
                       </div>
                   </div>
@@ -40,8 +40,7 @@
                                               <li class="dashed">
                                                   <i class="fal fa-hands-usd"></i>
                                                   <h3>Make Donation</h3>
-                                                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                      industry.</p>
+                                                  <p>Are you looking to make a donation, or would you like to know more about how to request donations for a cause or organization?</p>
                                               </li>
                                           </ol>
                                       </div>
@@ -52,8 +51,7 @@
                                               <li class="dashed">
                                                   <i class="fal fa-funnel-dollar"></i>
                                                   <h3>Fundraising</h3>
-                                                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                      industry.</p>
+                                                  <p>Fundraising can be an exciting endeavor! Are you looking for tips on how to start a fundraising campaign, or do you have a specific</p>
                                               </li>
                                           </ol>
                                       </div>
@@ -64,8 +62,7 @@
                                               <li>
                                                   <i class="fal fa-person-sign"></i>
                                                   <h3>Become A Volunteer</h3>
-                                                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                      industry.</p>
+                                                  <p>Becoming a volunteer is a wonderful way to make a positive impact on your community or a cause you care about.</p>
                                               </li>
                                           </ol>
                                       </div>
@@ -96,9 +93,13 @@
                                       <img class="causes-img" src="{{ asset('site/uploads/cause/' . $cause->photo) }}">
                                   </figure>
                                   <div class="bs">
-                                      <h3>{{ $cause->title }}</h3>
-                                      {!! $cause->details !!}
+                                      <h3 class="truncate-title">{{ $cause->title }}</h3>
+                                      <h6 class="truncate-details text-justify">{!! $cause->details !!}</h6>
+                                      <div class="d-flex justify-content-center align-item-center mt-2">
+                                        <a href="{{ route("displayCauseDetails",$cause->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">read more</a>
+                                      </div>
                                   </div>
+
                               </div>
                           </div>
                       @endforeach
@@ -125,8 +126,11 @@
                                     <img class="causes-img" src="{{ asset('site/uploads/service/' . $service->photo) }}">
                                 </figure>
                                 <div class="bs">
-                                    <h3>{{ $service->title }}</h3>
-                                    {!! $service->details !!}
+                                    <h3 class="truncate-title">{{ $service->title }}</h3>
+                                    <h6 class="truncate-details text-justify">{!! $service->details !!}</h6>
+                                    <div class="d-flex justify-content-center align-item-center mt-2">
+                                        <a href="{{ route("displayServiceDetails",$service->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">read more</a>
+                                      </div>
                                 </div>
                             </div>
                         </div>
@@ -134,7 +138,6 @@
                 </div>
             </div>
         </section>
-
           <!-- ======================Bg-04 started====================== -->
 
           <section class="bg-04">
@@ -203,8 +206,11 @@
                             </div>
                             <div class="blog-content-section">
                                 <div class="blo-content-title">
-                                    <h4>{{ $blog->title }}</h4>
-                                    {!! $blog->details !!}
+                                    <h4 class="truncate-title">{{ $blog->title }}</h4>
+                                    <h6 class="truncate-details text-justify">{!! $blog->details !!}</h6>
+                                    <div class="d-flex justify-content-center align-item-center mt-2">
+                                        <a href="{{ route("displayBlogDetails",$blog->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">read more</a>
+                                    </div>
                                 </div>
                                 <div class="blog-admin">
                                     <ol>

@@ -33,7 +33,9 @@ class AdminAboutController extends Controller
         $about->title = $validated['title'];
         if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
-            unlink('site/uploads/about/' . $about->photo);
+            if (file_exists('site/uploads/about/' . $about->photo)) {
+                unlink('site/uploads/about/' . $about->photo);
+            }
             $time = md5(time()) . '.' . $photo->getClientOriginalExtension();
             $photo->move('site/uploads/about/', $time);
             $about->photo = $time;

@@ -33,18 +33,21 @@
                     </div>
 
                     @foreach ($causes as $cause)
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="wrapper">
-                                <figure class="img-holder">
-                                    <img class="causes-img" src="{{ asset('site/uploads/cause/' . $cause->photo) }}">
-                                </figure>
-                                <div class="bs">
-                                    <h3>{{ $cause->title }}</h3>
-                                    {!! $cause->details !!}
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="wrapper">
+                            <figure class="img-holder">
+                                <img class="causes-img" src="{{ asset('site/uploads/cause/' . $cause->photo) }}">
+                            </figure>
+                            <div class="bs">
+                                <h3 class="truncate-title">{{ $cause->title }}</h3>
+                                <h6 class="truncate-details text-justify">{!! $cause->details !!}</h6>
+                                <div class="d-flex justify-content-center align-item-center mt-2">
+                                    <a href="{{ route("displayCauseDetails",$cause->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">read more</a>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
+                @endforeach
                 </div>
             </div>
         </section>
@@ -66,8 +69,11 @@
                                     <img class="causes-img" src="{{ asset('site/uploads/service/' . $service->photo) }}">
                                 </figure>
                                 <div class="bs">
-                                    <h3>{{ $service->title }}</h3>
-                                    {!! $service->details !!}
+                                    <h3 class="truncate-title">{{ $service->title }}</h3>
+                                    <h6 class="truncate-details text-justify">{!! $service->details !!}</h6>
+                                    <div class="d-flex justify-content-center align-item-center mt-2">
+                                        <a href="{{ route("displayServiceDetails",$service->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">read more</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

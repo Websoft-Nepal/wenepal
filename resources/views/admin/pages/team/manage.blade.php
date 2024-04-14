@@ -38,7 +38,7 @@
                                         @foreach($teams as $team)
                                         <tr>
                                                 <td class="text-center">
-                                                    <img src="{{ asset('site/Uploads/team/'.$team->photo) }}" style="width: 60px; height: 65px; object-fit: cover;">
+                                                    <a href="{{ asset('site/uploads/team/'.$team->photo) }}"><img src="{{ asset('site/uploads/team/'.$team->photo) }}" style="width: 60px; height: 65px; object-fit: cover;"></a>
                                                 </td>
 
                                                 <td class="text-center">

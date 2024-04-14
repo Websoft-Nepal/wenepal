@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Password;
 
 class LoginController extends Controller
 {
-    
+
     public function show()
     {
         return view('admin.auth.login');
@@ -26,7 +26,7 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $request->session()->regenerate();
 
-            return redirect()->intended('dashboard');
+            return redirect()->intended('profile');
         }
 
         return back()->withErrors([

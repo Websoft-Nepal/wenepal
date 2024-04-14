@@ -34,7 +34,7 @@
                                         @foreach($sponsors as $sponsor)
                                         <tr>
                                                 <td style="">
-                                                    <a href="{{ asset('site/Uploads/sponsor/'.$sponsor->photo) }}"><img src="{{ asset('site/Uploads/sponsor/'.$sponsor->photo) }}" style="width: 60px; height: 60px; object-fit: cover;"></a>
+                                                    <a href="{{ asset('site/uploads/sponsor/'.$sponsor->photo) }}"><img src="{{ asset('site/uploads/sponsor/'.$sponsor->photo) }}" style="width: 60px; height: 60px; object-fit: cover;"></a>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex px-2 py-1" >
