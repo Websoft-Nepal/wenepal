@@ -37,9 +37,12 @@
                                 <img src="{{ asset('site/uploads/blog/'.$blog->photo) }}">
                             </div>
                             <div class="blog-content-section">
-                                <div class="blo-content-title">
-                                    <h4>{{ $blog->title }}</h4>
-                                    {!! $blog->details !!}
+                                <div class="blog-content-title">
+                                    <h4 class="truncate-title">{{ $blog->title }}</h4>
+                                    <h6 class="truncate-details text-justify py-1" style="font-weight: 300">{!! $blog->details !!}</h6>
+                                    <div class="d-flex justify-content-center align-item-center mt-3 mb-3">
+                                        <a href="{{ route("displayBlogDetails",$blog->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">Read more</a>
+                                    </div>
                                 </div>
                                 <div class="blog-admin">
                                     <ol>

@@ -94,9 +94,9 @@
                                   </figure>
                                   <div class="bs">
                                       <h3 class="truncate-title">{{ $cause->title }}</h3>
-                                      <h6 class="truncate-details text-justify">{!! $cause->details !!}</h6>
+                                      <h6 class="truncate-details text-justify py-1" style="font-weight: 300">{!! $cause->details !!}</h6>
                                       <div class="d-flex justify-content-center align-item-center mt-2">
-                                        <a href="{{ route("displayCauseDetails",$cause->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">read more</a>
+                                        <a href="{{ route("displayCauseDetails",$cause->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">Read more</a>
                                       </div>
                                   </div>
 
@@ -127,9 +127,9 @@
                                 </figure>
                                 <div class="bs">
                                     <h3 class="truncate-title">{{ $service->title }}</h3>
-                                    <h6 class="truncate-details text-justify">{!! $service->details !!}</h6>
+                                    <h6 class="truncate-details text-justify py-1" style="font-weight: 300">{!! $service->details !!}</h6>
                                     <div class="d-flex justify-content-center align-item-center mt-2">
-                                        <a href="{{ route("displayServiceDetails",$service->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">read more</a>
+                                        <a href="{{ route("displayServiceDetails",$service->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">Read more</a>
                                       </div>
                                 </div>
                             </div>
@@ -207,9 +207,9 @@
                             <div class="blog-content-section">
                                 <div class="blo-content-title">
                                     <h4 class="truncate-title">{{ $blog->title }}</h4>
-                                    <h6 class="truncate-details text-justify">{!! $blog->details !!}</h6>
+                                    <h6 class="truncate-details text-justify py-1" style="font-weight: 300">{!! $blog->details !!}</h6>
                                     <div class="d-flex justify-content-center align-item-center mt-2">
-                                        <a href="{{ route("displayBlogDetails",$blog->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">read more</a>
+                                        <a href="{{ route("displayBlogDetails",$blog->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">Read more</a>
                                     </div>
                                 </div>
                                 <div class="blog-admin">

@@ -12,7 +12,7 @@
 <body>
   <!-- ======================header started====================== -->
   <header>
-    <div class="my-nav">
+    <div class="my-nav my-0">
       <div class="container">
         <div class="row">
           <div class="nav-items">
@@ -22,7 +22,7 @@
                 <div style="font-weight: bold;">
                     Wellness & Ecogaurd Nepal
                 </div>
-                <div style="font-size: 16px;">
+                <div class="text-center" style="font-size: 14px;">
                     Advoacating for a better tomorrow
                 </div>
               </div>

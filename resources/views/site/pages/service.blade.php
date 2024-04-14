@@ -40,7 +40,7 @@
                             </figure>
                             <div class="bs">
                                 <h3 class="truncate-title">{{ $cause->title }}</h3>
-                                <h6 class="truncate-details text-justify">{!! $cause->details !!}</h6>
+                                <h6 class="truncate-details text-justify py-1" style="font-weight: 300">{!! $cause->details !!}</h6>
                                 <div class="d-flex justify-content-center align-item-center mt-2">
                                     <a href="{{ route("displayCauseDetails",$cause->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">read more</a>
                                 </div>
@@ -70,7 +70,7 @@
                                 </figure>
                                 <div class="bs">
                                     <h3 class="truncate-title">{{ $service->title }}</h3>
-                                    <h6 class="truncate-details text-justify">{!! $service->details !!}</h6>
+                                    <h6 class="truncate-details text-justify py-1" style="font-weight: 300">{!! $service->details !!}</h6>
                                     <div class="d-flex justify-content-center align-item-center mt-2">
                                         <a href="{{ route("displayServiceDetails",$service->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">read more</a>
                                     </div>
