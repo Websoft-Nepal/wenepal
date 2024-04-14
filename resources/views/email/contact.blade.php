@@ -8,9 +8,9 @@
 </head>
 <body>
     <h1>Contact Mail</h1>
-    <p>Name: {{ $data['name'] }}</p>
-    <p>Email: {{ $data['email'] }}</p>
-    <p>Subject: {{ $data['subject'] }}</p>
-    <p>Message: {{ $data['message'] }}</p>
+    <p>Name: {{ $mailData['name'] }}</p>
+    <p>Email: {{ $mailData['email'] }}</p>
+    <p>Subject: {{ $mailData['subject'] }}</p>
+    <p>Message: {{ $mailData['message'] }}</p>
 </body>
 </html>

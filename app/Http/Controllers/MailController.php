@@ -17,13 +17,14 @@ class MailController extends Controller
             'subject' => 'required',
             'message' => 'required',
         ]);
-        $data = [
+        $mailData = [
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
             'subject' => $request->subject,
             'message' => $request->message,
         ];
-        Mail::to('prasunpaudel2001@gmail.com')->send(new Contact($data));
+        Mail::to('prasunpaudel2001@gmail.com')->send(new Contact($mailData));
+        return back()->with('success', 'Thanks for contacting us!');
     }
 }

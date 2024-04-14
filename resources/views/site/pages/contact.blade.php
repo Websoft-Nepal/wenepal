@@ -100,6 +100,13 @@
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
+
+                                    @if (session('success'))
+                                        <div class="alert alert-success">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
+
                                     <div class="d-flex justify-content-center align-item-center mt-5">
                                         <button type="submit" class="btn btn-primary" style="background: #fd580b; border:#fd580b">Send Message</button>
                                     </div>
