@@ -38,18 +38,22 @@
                             </div>
                             <div class="blog-content-section">
                                 <div class="blog-content-title">
-                                    <h4 class="truncate-title">{{ $blog->title }}</h4>
+                                    <h4 class="truncate-title line-clamp-2">{{ $blog->title }}</h4>
                                     <h6 class="truncate-details text-justify py-1" style="font-weight: 300">{!! $blog->details !!}</h6>
+                                </div>
+
+                                <div>
                                     <div class="d-flex justify-content-center align-item-center mt-3 mb-3">
                                         <a href="{{ route("displayBlogDetails",$blog->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">Read more</a>
                                     </div>
+                                    <div class="blog-admin">
+                                        <ol>
+                                            <li><i class="fal fa-user-tie"></i> By Wellness & Ecogaurd Nepal</li>
+                                            <li><i class="fal fa-calendar-alt"></i>{{ \Carbon\Carbon::parse($blog->created_at)->format('j F Y') }}                                        </li>
+                                        </ol>
+                                    </div>
                                 </div>
-                                <div class="blog-admin">
-                                    <ol>
-                                        <li><i class="fal fa-user-tie"></i> By Wellness & Ecogaurd Nepal</li>
-                                        <li><i class="fal fa-calendar-alt"></i>{{ \Carbon\Carbon::parse($blog->created_at)->format('j F Y') }}                                        </li>
-                                    </ol>
-                                </div>
+
                             </div>
                         </article>
                     @endforeach

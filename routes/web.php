@@ -20,6 +20,7 @@ Route::get('/', [IndexController::class, 'displayIndex'])->name('displayIndex');
 Route::get('/about', [AboutController::class, 'displayAbout'])->name('displayAbout');
 Route::get('/service', [ServiceController::class, 'displayService'])->name('displayService');
 Route::get('/service/detail/{slug}', [ServiceController::class, 'displayServiceDetails'])->name('displayServiceDetails');
+Route::get('/cause', [ServiceController::class, 'displayCause'])->name('displayCause');
 Route::get('/cause/detail/{slug}', [ServiceController::class, 'displayCauseDetails'])->name('displayCauseDetails');
 Route::get('/blog', [BlogController::class, 'displayBlog'])->name('displayBlog');
 Route::get('/blog/detail/{slug}', [BlogController::class, 'displayBlogDetails'])->name('displayBlogDetails');

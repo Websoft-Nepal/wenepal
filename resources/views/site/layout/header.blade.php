@@ -35,8 +35,16 @@
                 <ul>
                   <li><a href="{{ route("displayIndex") }}">Home</a></li>
                   <li><a href="{{ route("displayAbout") }}">About Us</a></li>
-                  <li><a href="{{ route("displayService") }}">Services</a></li>
-                  <li><a href="{{ route("displayBlog") }}">Blog</a></li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                          Our Areas
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route("displayService") }}">Services</a>
+                            <a class="dropdown-item" href="{{ route("displayCause") }}">Recent Causes</a>
+                        </div>
+                  </li>
+                  <li><a href="{{ route("displayBlog") }}">News</a></li>
                   <li><a href="{{ route("displayContact") }}">Contact Us</a></li>
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">

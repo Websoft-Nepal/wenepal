@@ -12,8 +12,7 @@ class ServiceController extends Controller
     public function displayService()
     {
         $data=[
-            'causes'=>Cause::all(),
-            'services'=>Service::all(),
+            'services'=>Service::latest()->paginate(8),
         ];
         return view('site.pages.service',$data);
     }
@@ -25,6 +24,14 @@ class ServiceController extends Controller
             'services'=>Service::all(),
         ];
         return view('site.pages.serviceDetail',$data);
+    }
+
+    public function displayCause()
+    {
+        $data=[
+            'causes'=>Cause::latest()->paginate(8),
+        ];
+        return view('site.pages.cause',$data);
     }
 
     public function displayCauseDetails($slug)

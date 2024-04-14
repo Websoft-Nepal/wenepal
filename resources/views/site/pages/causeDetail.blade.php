@@ -13,7 +13,7 @@
                             <ol>
                                 <li><a class="text-white" href="{{ route('displayIndex') }}">Home</a><i
                                         class="far fa-angle-double-right"></i></li>
-                                <li><a class="text-white" href="{{ route('displayService') }}">Services</a></li>
+                                <li><a class="text-white" href="{{ route('displayCause') }}">Recent Causes</a></li>
                             </ol>
                         </div>
                     </div>
