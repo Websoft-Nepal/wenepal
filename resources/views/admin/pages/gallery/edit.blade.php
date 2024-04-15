@@ -44,7 +44,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="file-loading">
-                                                <input id="kv-explorer" type="file" multiple>
+                                                <input id="kv-explorer" name="photo[]" type="file" multiple>
                                             </div>
                                         </div>
                                     </div>

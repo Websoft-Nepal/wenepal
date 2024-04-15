@@ -57,7 +57,7 @@ Route::get('/login', [LoginController::class, 'show'])->middleware('guest')->nam
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest')->name('login.perform');
 Route::get('/reset-password', [ResetPassword::class, 'show'])->name('reset-password')->middleware('guest');
 Route::post('/reset-password', [ResetPassword::class, 'send'])->name('reset.perform')->middleware('guest');
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::get('/change-password', [ChangePassword::class, 'show'])->name('change-password');
     Route::post('/change-password', [ChangePassword::class, 'update'])->name('change.perform');
     // about
