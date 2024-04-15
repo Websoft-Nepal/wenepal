@@ -30,11 +30,11 @@
     </script>
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+        <div class="col-lg-5 col-md-5 col-sm-6 col-6">
           <div class="footer-content">
-            <h2>We nepal</h2>
-            <p></p>
-            <ul>
+            <h2 style="font-size:18px;"><img src="{{ asset("site/images/logo.png") }}" alt="" style="height: 55px;width:55px;">Wellness & Ecogaurd Nepal</h2>
+            <p class="text-justify pr-5" style="font-size: 16px;">Wellness & Ecogaurd Nepal is a non-profit organization that is dedicated to the conservation of the environment and the well-being of the people. We are committed to creating a sustainable future for all.</p>
+            <ul class="text-center pr-5">
               <li><i class="fab fa-facebook-f"></i></li>
               <li><i class="fab fa-twitter"></i></li>
               <li><i class="fab fa-google"></i></li>
@@ -42,7 +42,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-4">
           <div class="footer-content">
             <h2>Quick Links</h2>
             <ol>
@@ -54,7 +54,7 @@
             </ol>
           </div>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-6">
           <div class="footer-content">
             <h2>News Letters</h2>
             <p>Stay updated with us in our Recent Activities.</p>
@@ -70,7 +70,7 @@
       <div class="container">
         <div class="copy-right-card">
          <p>2024 @ All Rights Reserved Designed and developed by<a
-             href="https://www.websoftnepal.com.np">websoft Technology</a></p>
+             href="https://www.websoftnepal.com.np">Websoft Technology</a></p>
         </div>
       </div>
     </div>
