@@ -32,14 +32,14 @@ class AdminGalleryController extends Controller
         ]);
         $gallary = new Gallary();
         $gallary->title = $request->title;
-        $gallarySlug = Str::slug($request->title, '-');
-        $slug = $gallarySlug;
-        $counter = 1;
-        while(Gallary::where('slug', $slug)->exists()){
-            $gallarySlug = $gallarySlug . '-' . $counter;
-            $counter++;
-        }
-        $gallary->slug = $gallarySlug;
+        // $gallarySlug = Str::slug($request->title, '-');
+        // $slug = $gallarySlug;
+        // $counter = 1;
+        // while(Gallary::where('slug', $slug)->exists()){
+        //     $gallarySlug = $gallarySlug . '-' . $counter;
+        //     $counter++;
+        // }
+        // $gallary->slug = $gallarySlug;
         $gallary->save();
         if($request->hasFile('photo')){
             $counter=1;
@@ -68,37 +68,57 @@ class AdminGalleryController extends Controller
 
     public function updateGallery(Request $request, $slug)
     {
+        // return $request;
         $request->validate([
             'title' => 'required',
         ]);
-        $gallary = Gallary::where('slug', $slug)->first();
+
+        $gallary = Gallary::where("slug", $slug)->first();
+
         $gallary->title = $request->title;
-        $gallarySlug = Str::slug($request->title, '-');
-        $slug = $gallarySlug;
-        $counter = 1;
-        while(Gallary::where('slug', $slug)->exists()){
-            $gallarySlug = $gallarySlug . '-' . $counter;
-            $counter++;
-        }
-        $gallary->slug = $gallarySlug;
-        $gallary->save();
+
         if($request->hasFile('photo')){
-            $counter=1;
-            foreach($request->file('photo') as $file){
-                if(Photos::where('photo', $file)->doesntExist()){
-                    $photo = $file;
-                    $path= md5(time()) .$counter. '.' . $photo->getClientOriginalExtension();
-                    $counter++;
-                    $file->move('site/uploads/gallary/', $path);
-                    $gallary_photo = new Photos;
-                    $gallary_photo->gallary_id = $gallary->id;
-                    $gallary_photo->photo = $path;
-                    $gallary_photo->save();
-                }
+            foreach($request->file('photo') as $index => $file){
+                $photo = $file;
+                $path= md5(time()) . $index . '.' . $photo->getClientOriginalExtension();
+                $file->move('site/uploads/gallary/', $path);
+                $gallary_photo = new Photos;
+                $gallary_photo->gallary_id = $gallary->id;
+                $gallary_photo->photo = $path;
+                $gallary_photo->save();
             }
         }
+
+        $gallary->update();
+
+        // $gallary = Gallary::where('slug', $slug)->first();
+        // $gallary->title = $request->title;
+        // $gallarySlug = Str::slug($request->title, '-');
+        // $slug = $gallarySlug;
+        // $counter = 1;
+        // while(Gallary::where('slug', $slug)->exists()){
+        //     $gallarySlug = $gallarySlug . '-' . $counter;
+        //     $counter++;
+        // }
+        // $gallary->slug = $gallarySlug;
+        // $gallary->save();
+        // if($request->hasFile('photo')){
+        //     $counter=1;
+        //     foreach($request->file('photo') as $file){
+        //         if(Photos::where('photo', $file)->doesntExist()){
+        //             $photo = $file;
+        //             $path= md5(time()) .$counter. '.' . $photo->getClientOriginalExtension();
+        //             $counter++;
+        //             $file->move('site/uploads/gallary/', $path);
+        //             $gallary_photo = new Photos;
+        //             $gallary_photo->gallary_id = $gallary->id;
+        //             $gallary_photo->photo = $path;
+        //             $gallary_photo->save();
+        //         }
+        //     }
+        // }
         Alert::success('Success', 'Gallery Updated Successfully');
-        return redirect()->back();
+        return redirect()->route("manageGallery");
     }
 
     public function deleteGallery($slug)
