@@ -87,28 +87,39 @@
                               <h2>Recent Causes</h2>
                               <p>Here are some of the recent activities we did recently.</p>
                           </div>
-                      </div>
-
-                      @foreach ($causes as $cause)
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                            <div class="wrapper">
-                                <figure class="img-holder">
-                                    <img class="causes-img" src="{{ asset('site/uploads/cause/' . $cause->photo) }}">
-                                </figure>
-                                <div class="bs">
-                                    <div>
-                                        <h3 class="truncate-title line-clamp-2">{{ $cause->title }}</h3>
-                                        <h6 class="truncate-details py-1" style="font-weight: 300">{!! $cause->details !!}
-                                        </h6>
-                                    </div>
-                                    <div class="d-flex justify-content-center align-item-center mt-2">
-                                        <a href="{{ route('displayCauseDetails', $cause->slug) }}" class="btn btn-primary"
-                                            style="background: #fd580b; border:#fd580b">Read more</a>
-                                    </div>
-                                </div>
+                          <div class="glide" id="glide_1">
+                            <div class="glide__track" data-glide-el="track">
+                                <ul class="glide__slides">
+                                    @foreach ($causes as $cause)
+                                        <li class="glide__slide">
+                                                <div class="wrapper">
+                                                    <figure class="img-holder">
+                                                        <img class="causes-img" src="{{ asset('site/uploads/cause/' . $cause->photo) }}">
+                                                    </figure>
+                                                    <div class="bs">
+                                                        <div>
+                                                            <h3 class="truncate-title line-clamp-2">{{ $cause->title }}</h3>
+                                                            <h6 class="truncate-details py-1" style="font-weight: 300">{!! $cause->details !!}
+                                                            </h6>
+                                                        </div>
+                                                        <div class="d-flex justify-content-center align-item-center mt-2">
+                                                            <a href="{{ route('displayCauseDetails', $cause->slug) }}" class="btn btn-primary"
+                                                                style="background: #fd580b; border:#fd580b">Read more</a>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
                             </div>
-                        </div>
-                    @endforeach
+                            <div class="glide__arrows nav_btn" data-glide-el="controls">
+                                <button class="glide__arrow glide__arrow--left left-btn" data-glide-dir="<"><i
+                                        class="fa fa-arrow-left" aria-hidden="true"></i></button>
+                                <button class="glide__arrow glide__arrow--right right-btn" data-glide-dir=">"><i
+                                        class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                            </div>
+                          </div>
+                      </div>
                   </div>
               </div>
           </section>
@@ -125,28 +136,40 @@
                       </div>
                   </div>
                   <div class="row">
-                    @foreach ($services as $service)
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="wrapper">
-                            <figure class="img-holder">
-                                <img class="causes-img" src="{{ asset('site/uploads/service/' . $service->photo) }}">
-                            </figure>
-                            <div class="bs">
-                                <div>
+                    <div class="glide" id="glide_2">
+                        <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
+                                @foreach ($services as $service)
+                                        <li class="glide__slide">
+                                            <div class="wrapper">
+                                                <figure class="img-holder">
+                                                    <img class="causes-img" src="{{ asset('site/uploads/service/' . $service->photo) }}">
+                                                </figure>
+                                                <div class="bs">
+                                                    <div>
 
-                                    <h3 class="truncate-title line-clamp-2">{{ $service->title }}</h3>
-                                    <h6 class="truncate-details py-1" style="font-weight: 300">{!! $service->details !!}
-                                    </h6>
-                                </div>
-                                <div class="d-flex justify-content-center align-item-center mt-2">
-                                    <a href="{{ route('displayServiceDetails', $service->slug) }}"
-                                        class="btn btn-primary" style="background: #fd580b; border:#fd580b">Read
-                                        more</a>
-                                </div>
-                            </div>
+                                                        <h3 class="truncate-title line-clamp-2">{{ $service->title }}</h3>
+                                                        <h6 class="truncate-details py-1" style="font-weight: 300">{!! $service->details !!}
+                                                        </h6>
+                                                    </div>
+                                                    <div class="d-flex justify-content-center align-item-center mt-2">
+                                                        <a href="{{ route('displayServiceDetails', $service->slug) }}"
+                                                            class="btn btn-primary" style="background: #fd580b; border:#fd580b">Read
+                                                            more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        <div class="glide__arrows nav_btn" data-glide-el="controls">
+                            <button class="glide__arrow glide__arrow--left left-btn" data-glide-dir="<"><i
+                                    class="fa fa-arrow-left" aria-hidden="true"></i></button>
+                            <button class="glide__arrow glide__arrow--right right-btn" data-glide-dir=">"><i
+                                    class="fa fa-arrow-right" aria-hidden="true"></i></button>
                         </div>
                     </div>
-                @endforeach
                   </div>
               </div>
           </section>
@@ -211,32 +234,44 @@
                   </div>
 
                   <div class="blog-main-card d-flex">
-                    @foreach ($blogs as $blog )
-                        <article class="blog-sub">
-                            <div class="blog-content">
-                                <img src="{{ asset('site/uploads/blog/'.$blog->photo) }}">
-                            </div>
-                            <div class="blog-content-section">
-                                <div class="blog-content-title">
-                                    <h4 class="truncate-title line-clamp-2">{{ $blog->title }}</h4>
-                                    <h6 class="truncate-details text-justify py-1" style="font-weight: 300">{!! $blog->details !!}</h6>
-                                </div>
+                    <div class="glide" id="glide_3">
+                        <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
+                                @foreach ($blogs as $blog )
+                                    <li class="glide__slide blog-sub">
+                                            <div class="blog-content">
+                                                <img src="{{ asset('site/uploads/blog/'.$blog->photo) }}">
+                                            </div>
+                                            <div class="blog-content-section">
+                                                <div class="blog-content-title">
+                                                    <h4 class="truncate-title line-clamp-2">{{ $blog->title }}</h4>
+                                                    <h6 class="truncate-details text-justify py-1" style="font-weight: 300">{!! $blog->details !!}</h6>
+                                                </div>
 
-                                <div>
-                                    <div class="d-flex justify-content-center align-item-center mt-3 mb-3">
-                                        <a href="{{ route("displayBlogDetails",$blog->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">Read more</a>
-                                    </div>
-                                    <div class="blog-admin">
-                                        <ol>
-                                            <li><i class="fal fa-user-tie"></i> By Wellness & Ecogaurd Nepal</li>
-                                            <li><i class="fal fa-calendar-alt"></i>{{ \Carbon\Carbon::parse($blog->created_at)->format('j F Y') }}                                        </li>
-                                        </ol>
-                                    </div>
-                                </div>
+                                                <div>
+                                                    <div class="d-flex justify-content-center align-item-center mt-3 mb-3">
+                                                        <a href="{{ route("displayBlogDetails",$blog->slug) }}" class="btn btn-primary" style="background: #fd580b; border:#fd580b">Read more</a>
+                                                    </div>
+                                                    <div class="blog-admin">
+                                                        <ol>
+                                                            <li><i class="fal fa-user-tie"></i> By Wellness & Ecogaurd Nepal</li>
+                                                            <li><i class="fal fa-calendar-alt"></i>{{ \Carbon\Carbon::parse($blog->created_at)->format('j F Y') }}                                        </li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
 
-                            </div>
-                        </article>
-                    @endforeach
+                                            </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        <div class="glide__arrows nav_btn" data-glide-el="controls">
+                            <button class="glide__arrow glide__arrow--left left-btn" data-glide-dir="<"><i
+                                    class="fa fa-arrow-left" aria-hidden="true"></i></button>
+                            <button class="glide__arrow glide__arrow--right right-btn" data-glide-dir=">"><i
+                                    class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
                 </div>
               </div>
           </section>

@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="{{ asset('site/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('site/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('site/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/glide/glide.core.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/glide/glide.theme.min.css') }}">
 </head>
 
 <body>
