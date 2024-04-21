@@ -24,7 +24,7 @@
                                     Wellness & Ecogaurd Nepal
                                 </div>
                                 <div class="text-center" style="font-size: 14px;">
-                                    Advoacating for a better tomorrow
+                                    Live a life in Balance With Nature
                                 </div>
                             </div>
                         </div>

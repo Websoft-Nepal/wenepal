@@ -24,7 +24,7 @@ class MailController extends Controller
             'subject' => $request->subject,
             'message' => $request->message,
         ];
-        Mail::to('prasunpaudel2001@gmail.com')->send(new Contact($mailData));
+        Mail::to('kun4u21@gmail.com')->send(new Contact($mailData));
         return back()->with('success', 'Thanks for contacting us!');
     }
 }
