@@ -138,6 +138,26 @@
   }
   new Glide('#glide_3', config3).mount()
 </script>
+<script>
+  const config4 = {
+      type: 'carousel',
+      startAt: 0,
+      autoplay: 2000,
+      animationDuration: 400,
+      perView: 4,
+      breakpoints: {
+          1024: {
+              perView: 3,
+              gap: 35
+          },
+          480: {
+              perView: 2,
+              gap: 20
+          }
+      }
+  }
+  new Glide('#glide_4', config4).mount()
+</script>
 <script src="{{ asset('site/js/fslightbox.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset("site/js/jquery-3.2.1.min.js") }}"></script>

@@ -185,39 +185,51 @@
                       </div>
 
                       <div class="main-team-card d-flex">
-                          @foreach ($teams as $team)
-                              <div class="team-setup">
-                                  <div class="team-items">
-                                      <div class="team-user">
-                                          <img src="{{ asset('site/uploads/team/' . $team->photo) }}">
-                                      </div>
-                                      <div class="team-user-social">
-                                          <ol>
-                                              @if ($team->facebook)
-                                                  <li><a href="{{ $team->facebook }}"><i
-                                                              class="fab text-white fa-facebook-f"></i></a></li>
-                                              @endif
-                                              @if ($team->twitter)
-                                                  <li><a href="{{ $team->twitter }}"><i
-                                                              class="fab text-white fa-twitter"></i></a></li>
-                                              @endif
-                                              @if ($team->linkedin)
-                                                  <li><a href="{{ $team->linkedin }}"><i
-                                                              class="fab text-white fa-linkedin-in"></i></a></li>
-                                              @endif
-                                              @if ($team->instagram)
-                                                  <li><a href="{{ $team->instagram }}"><i
-                                                              class="fab text-white fa-instagram"></i></a></li>
-                                              @endif
-                                          </ol>
-                                      </div>
-                                      <div class="team-name">
-                                          <h2>{{ $team->name }}</h2>
-                                          <b>{{ $team->post }}</b>
-                                      </div>
-                                  </div>
-                              </div>
-                          @endforeach
+                        <div class="glide" id="glide_4">
+                            <div class="glide__track" data-glide-el="track">
+                                <ul class="glide__slides">
+                                    @foreach ($teams as $team)
+                                        <li class="glide__slide team-setup">
+                                                <div class="team-items">
+                                                    <div class="team-user">
+                                                        <img class="team-photo" src="{{ asset('site/uploads/team/' . $team->photo) }}">
+                                                    </div>
+                                                    <div class="team-user-social">
+                                                        <ol>
+                                                            @if ($team->facebook)
+                                                                <li><a href="{{ $team->facebook }}"><i
+                                                                            class="fab text-white fa-facebook-f"></i></a></li>
+                                                            @endif
+                                                            @if ($team->twitter)
+                                                                <li><a href="{{ $team->twitter }}"><i
+                                                                            class="fab text-white fa-twitter"></i></a></li>
+                                                            @endif
+                                                            @if ($team->linkedin)
+                                                                <li><a href="{{ $team->linkedin }}"><i
+                                                                            class="fab text-white fa-linkedin-in"></i></a></li>
+                                                            @endif
+                                                            @if ($team->instagram)
+                                                                <li><a href="{{ $team->instagram }}"><i
+                                                                            class="fab text-white fa-instagram"></i></a></li>
+                                                            @endif
+                                                        </ol>
+                                                    </div>
+                                                    <div class="team-name">
+                                                        <h2>{{ $team->name }}</h2>
+                                                        <b>{{ $team->post }}</b>
+                                                    </div>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <div class="glide__arrows nav_btn" data-glide-el="controls">
+                                <button class="glide__arrow glide__arrow--left left-btn" data-glide-dir="<"><i
+                                        class="fa fa-arrow-left" aria-hidden="true"></i></button>
+                                <button class="glide__arrow glide__arrow--right right-btn" data-glide-dir=">"><i
+                                        class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
                       </div>
                   </div>
               </div>

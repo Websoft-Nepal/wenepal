@@ -608,6 +608,10 @@ header .nav-items .menu-items .menu ul li a:hover {
     position: relative;
     transition: 0.5s;
 }
+.bg-04 .main-team-card .team-setup .team-items .team-user .team-photo{
+    height: 350px;
+    object-fit: cover;
+}
 
 .bg-04 .main-team-card .team-setup .team-items .team-user::before {
     position: absolute;
