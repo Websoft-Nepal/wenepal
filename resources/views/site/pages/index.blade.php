@@ -1,6 +1,7 @@
   <!-- ======================Main started====================== -->
   @section('content')
       @extends('site.layout.app')
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <main>
           <!-- ======================Banner started====================== -->
 
@@ -29,6 +30,51 @@
           <!-- ======================Bg-01 started====================== -->
 
           <section class="bg-01">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-12">
+                          <div class="wrapper">
+                              <div class="row">
+                                  <div class="col-lg-4 col-md-4 col-sm-6">
+                                      <div class="content">
+                                          <ol>
+                                              <li class="dashed">
+                                                  <i class="fal fa-person-sign"></i>
+                                                  <h3>Mission</h3>
+                                                  <p>Enhancing lives in remote Nepal through essential healthcare services and impactful environmental conservation initiatives.</p>
+                                              </li>
+                                          </ol>
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-4 col-md-4 col-sm-6">
+                                      <div class="content">
+                                          <ol>
+                                              <li class="dashed">
+                                                <i class="fa-solid fa-newspaper"></i>
+                                                  <h3>Objective</h3>
+                                                  <p>Enhance healthcare access and empower communities: Protect natural resources, combat climate change, and raise environmental awareness.</p>
+                                              </li>
+                                          </ol>
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-4 col-md-4 col-sm-6">
+                                      <div class="content">
+                                          <ol>
+                                              <li>
+                                                  <i class="fa-solid fa-eye"></i>
+                                                  <h3>visions</h3>
+                                                  <p>A healthier, more sustainable Nepal where communities thrive and nature flourishes.</p>
+                                              </li>
+                                          </ol>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          {{-- <section class="bg-01">
               <div class="container">
                   <div class="row">
                       <div class="col-12">
@@ -75,7 +121,7 @@
                       </div>
                   </div>
               </div>
-          </section>
+          </section> --}}
 
           <!-- ======================Bg-02 started====================== -->
 
