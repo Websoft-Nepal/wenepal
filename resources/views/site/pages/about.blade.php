@@ -121,7 +121,7 @@
                             <div class="team-setup">
                                 <div class="team-items">
                                     <div class="team-user">
-                                        <img src="{{ asset('site/uploads/team/' . $team->photo) }}">
+                                        <img class="team-photo" src="{{ asset('site/uploads/team/' . $team->photo) }}">
                                     </div>
                                     <div class="team-user-social">
                                         <ol>
